@@ -24,17 +24,28 @@ Scenario: Multiply two numbers
 	When the two numbers are multiplied
 	Then the result should be 35
 
-Scenario: Divide two numbers
-	Given the first number is 50
-	And the second number is 5
-	When the two numbers are divided
-	Then the result string should be 10
+#Scenario: Divide two numbers
+#	Given the first number is 50
+#	And the second number is 5
+#	When the two numbers are divided
+#	Then the result string should be 10
+#
+#Scenario: Divide by zero
+#	Given the first number is 50
+#	And the second number is 0
+#	When the two numbers are divided
+#	Then the result string should be Cannot divide by zero
 
-Scenario: Divide by zero
-	Given the first number is 50
-	And the second number is 0
+Scenario Outline: Divide two numbers :)
+	Given the first number is <number1>
+	And the second number is <number2>
 	When the two numbers are divided
-	Then the result string should be Cannot divide by zero
+	Then the result string should be <result>
+
+	Examples:
+		| number1 | number2 | result |
+		| 50      | 5       | 10     |
+		| 50      | 0       | Cannot divide by zero |
 
 Scenario: Add more than 2 numbers
 	Given the new number is 50
@@ -57,16 +68,28 @@ Scenario: Multiply more than 2 numbers
 	When the numbers are multiplied
 	Then the result should be 350
 
-Scenario: Divide more than 2 numbers
-	Given the new number is 50
-	And the new number is 5
-	And the new number is 2
-	When the numbers are divided
-	Then the result string should be 5
+#Scenario: Divide more than 2 numbers
+#	Given the new number is 50
+#	And the new number is 5
+#	And the new number is 2
+#	When the numbers are divided
+#	Then the result string should be 5
+#
+#Scenario: Divide by zero with more than 2 numbers
+#	Given the new number is 50
+#	And the new number is 0
+#	And the new number is 2
+#	When the numbers are divided
+#	Then the result string should be Cannot divide by zero
 
-Scenario: Divide by zero with more than 2 numbers
-	Given the new number is 50
-	And the new number is 0
-	And the new number is 2
+Scenario Outline: Divide more than 2 numbers
+	Given the new number is <number1>
+	And the new number is <number2>
+	And the new number is <number3>
 	When the numbers are divided
-	Then the result string should be Cannot divide by zero
+	Then the result string should be <result>
+
+	Examples:
+		| number1 | number2 | number3 | result |
+		| 50      | 5       | 2       | 5      |
+		| 50      | 0       | 2       | Cannot divide by zero |
