@@ -68,6 +68,7 @@ Scenario: Multiply more than 2 numbers
 	When the numbers are multiplied
 	Then the result should be 350
 
+
 #Scenario: Divide more than 2 numbers
 #	Given the new number is 50
 #	And the new number is 5
