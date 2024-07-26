@@ -50,6 +50,7 @@ namespace DartGame
             if (Score == 0)
             {
                 Console.WriteLine("Player " + Id + " wins");
+
             }
             else if (Score < 0)
             {
